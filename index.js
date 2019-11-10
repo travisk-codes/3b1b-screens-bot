@@ -1,5 +1,6 @@
 const fs = require('fs')
-var Twit = require('twit')
+const Twit = require('twit')
+const jimp = require('jimp')
 
 var config = require('./config')
 config = config.twitter_keys
@@ -14,17 +15,22 @@ const T = new Twit({
 function randomImage() {
 	let rand = Math.random() * 540
 	rand = Math.round(rand)
-	return `./screencaps/screen${rand}.png`
+	jimp.read(`./screencaps/screen${538}.png`, (e, img) => {
+		if (e) throw e
+		img.cover(800, 450).write('test.png')
+	})
+	return `./test.png`
 }
 
 function tweetScreencap() {
-	T.postMediaChunked({ file_path: randomImage() }, (e, data, res) => {
+	const path = randomImage()
+	T.postMediaChunked({ file_path: path }, (e, data, res) => {
 		console.log(data)
-		const params = { status: 'test', media_ids: [data.media_id_string] }
+		const params = { status: 'test!', media_ids: [data.media_id_string] }
 		T.post('statuses/update', params, (err, dat, res) => console.log(dat))
 	})
 }
-tweetScreencap()
+randomImage()
 
 //setInterval(tweetScreencap, 1000 * 60 * 60)
 
