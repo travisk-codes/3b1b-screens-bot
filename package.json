@@ -1,0 +1,29 @@
+{
+  "name": "3b1b-screens-bot",
+  "version": "1.0.0",
+  "description": "Tweets out random screencaps of 3b1b videos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/travisk-codes/3b1b-screens-bot.git"
+  },
+  "keywords": [
+    "twitter",
+    "bot",
+    "3b1b",
+    "video",
+    "screencaps"
+  ],
+  "author": "Travis Kohlbeck",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/travisk-codes/3b1b-screens-bot/issues"
+  },
+  "homepage": "https://github.com/travisk-codes/3b1b-screens-bot#readme",
+  "dependencies": {
+    "twit": "^2.2.11"
+  }
+}
