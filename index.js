@@ -13,21 +13,20 @@ const T = new Twit({
 })
 
 const video_info = [
-	["Divergence and curl: The language of Maxwell's equations, fluid flow, and more", 'rB83DpBJQsE']
+	["Divergence and curl: The language of Maxwell's equations, fluid flow, and more", 'rB83DpBJQsE', 941],
+	["Visualizing quaternions (4d numbers) with stereographic projection", 'd4EgbgTm0Bg', 1910]
 ]
 
 function randomImage() {
-	let rand_time = Math.random() * 540
-	rand_time = Math.round(rand_time)
 	let rand_video = Math.floor(Math.random() * video_info.length)
-	console.log(video_info, rand_video)
+	let rand_time = Math.round(Math.random() * video_info[2])
 	let video_id = video_info[rand_video][1]
 	let video_title = video_info[rand_video][0]
 	const path = `./screencaps/${video_id}/${rand_time}.png`
-	jimp.read(path, (e, img) => {
+	/*jimp.read(path, (e, img) => {
 		if (e) throw e
 		img.cover(800, 50).write(path)
-	})
+	})*/
 
 	return [path, video_title, video_id, rand_time]
 }
