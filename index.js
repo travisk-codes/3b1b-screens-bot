@@ -14,7 +14,12 @@ const T = new Twit({
 
 const video_info = [
 	["Divergence and curl: The language of Maxwell's equations, fluid flow, and more", 'rB83DpBJQsE', 941],
-	["Visualizing quaternions (4d numbers) with stereographic projection", 'd4EgbgTm0Bg', 1910]
+	["Visualizing quaternions (4d numbers) with stereographic projection", 						 'd4EgbgTm0Bg', 1907],
+	["A Curious Pattern Indeed", 																											 '84hEmGHw3J8', 108],
+	["Euler's Formula Poem", 'zLzLxVeqdQg', 63]
+	[ "3blue1brown channel trailer", 'R7p-nPg8t_g', 93]
+	['Fractal charm: Space filling curves', 'RU0wScIj36o', 155]
+	[ "Higher order derivatives | Essence of calculus, chapter 10", 'BLkz5LGWihw', 338]
 ]
 
 function randomImage() {
@@ -44,10 +49,5 @@ function tweetScreencap() {
 }
 
 tweetScreencap()
-//setInterval(tweetScreencap, 1000 * 60)
+setInterval(tweetScreencap, 1000 * 60)
 
-/*
-1. every hour
-2. load random image
-3. post with video title and url-at-time
-*/
