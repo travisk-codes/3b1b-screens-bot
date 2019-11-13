@@ -12,27 +12,40 @@ const T = new Twit({
 	access_token_secret: config.access_token_secret,
 })
 
+const video_info = [
+	["Divergence and curl: The language of Maxwell's equations, fluid flow, and more", 'rB83DpBJQsE']
+]
+
 function randomImage() {
-	let rand = Math.random() * 540
-	rand = Math.round(rand)
-	jimp.read(`./screencaps/screen${538}.png`, (e, img) => {
+	let rand_time = Math.random() * 540
+	rand_time = Math.round(rand_time)
+	let rand_video = Math.floor(Math.random() * video_info.length)
+	console.log(video_info, rand_video)
+	let video_id = video_info[rand_video][1]
+	let video_title = video_info[rand_video][0]
+	const path = `./screencaps/${video_id}/${rand_time}.png`
+	jimp.read(path, (e, img) => {
 		if (e) throw e
-		img.cover(800, 450).write('test.png')
+		img.cover(800, 50).write(path)
 	})
-	return `./test.png`
+
+	return [path, video_title, video_id, rand_time]
 }
 
 function tweetScreencap() {
-	const path = randomImage()
-	T.postMediaChunked({ file_path: path }, (e, data, res) => {
-		console.log(data)
-		const params = { status: 'test!', media_ids: [data.media_id_string] }
+	const post_data = randomImage()
+	console.log(post_data)
+	const status = post_data[1] + ` https://youtu.be/${post_data[2]}?t=${post_data[3]}`
+	const img = fs.readFileSync(post_data[0], { encoding: 'base64' })
+	T.post('media/upload', { media_data: img }, (err, dat, res) => {
+		console.log(dat)
+		const params = { status: status, media_ids: [dat.media_id_string] }
 		T.post('statuses/update', params, (err, dat, res) => console.log(dat))
 	})
 }
-randomImage()
 
-//setInterval(tweetScreencap, 1000 * 60 * 60)
+tweetScreencap()
+//setInterval(tweetScreencap, 1000 * 60)
 
 /*
 1. every hour
