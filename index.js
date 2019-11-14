@@ -16,10 +16,12 @@ const video_info = [
 	["Divergence and curl: The language of Maxwell's equations, fluid flow, and more", 'rB83DpBJQsE', 941],
 	["Visualizing quaternions (4d numbers) with stereographic projection", 						 'd4EgbgTm0Bg', 1907],
 	["A Curious Pattern Indeed", 																											 '84hEmGHw3J8', 108],
-	["Euler's Formula Poem", 'zLzLxVeqdQg', 63]
-	[ "3blue1brown channel trailer", 'R7p-nPg8t_g', 93]
-	['Fractal charm: Space filling curves', 'RU0wScIj36o', 155]
-	[ "Higher order derivatives | Essence of calculus, chapter 10", 'BLkz5LGWihw', 338]
+	["Euler's Formula Poem", 'zLzLxVeqdQg', 63],
+	[ "3blue1brown channel trailer", 'R7p-nPg8t_g', 93],
+	['Fractal charm: Space filling curves', 'RU0wScIj36o', 155],
+	[ "Higher order derivatives | Essence of calculus, chapter 10", 'BLkz5LGWihw', 338],
+	[ "Pure Fourier series animation montage", '-qgreAUpPwM', 749],
+	[ "Differential equations, studying the unsolvable | DE1", 'p_di4Zn4wz4', 1635]
 ]
 
 function randomImage() {
@@ -28,11 +30,6 @@ function randomImage() {
 	let video_id = video_info[rand_video][1]
 	let video_title = video_info[rand_video][0]
 	const path = `./screencaps/${video_id}/${rand_time}.png`
-	/*jimp.read(path, (e, img) => {
-		if (e) throw e
-		img.cover(800, 50).write(path)
-	})*/
-
 	return [path, video_title, video_id, rand_time]
 }
 
