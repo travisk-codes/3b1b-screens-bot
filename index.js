@@ -21,7 +21,9 @@ const video_info = [
 	['Fractal charm: Space filling curves', 'RU0wScIj36o', 155],
 	[ "Higher order derivatives | Essence of calculus, chapter 10", 'BLkz5LGWihw', 338],
 	[ "Pure Fourier series animation montage", '-qgreAUpPwM', 749],
-	[ "Differential equations, studying the unsolvable | DE1", 'p_di4Zn4wz4', 1635]
+	[ "Differential equations, studying the unsolvable | DE1", 'p_di4Zn4wz4', 1637],
+	["Why do prime numbers make these spirals?", 'EK32jo7i5LQ', 1351],
+	["Some light quantum mechanics (with minutephysics)", "MzRCDLre1b4"],
 ]
 
 function randomImage() {
