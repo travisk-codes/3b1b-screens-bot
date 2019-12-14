@@ -15,23 +15,24 @@ const T = new Twit({
 const video_info = [
 	["Divergence and curl: The language of Maxwell's equations, fluid flow, and more", 'rB83DpBJQsE', 941],
 	["Visualizing quaternions (4d numbers) with stereographic projection", 						 'd4EgbgTm0Bg', 1907],
-	["A Curious Pattern Indeed", 																											 '84hEmGHw3J8', 108],
-	["Euler's Formula Poem", 'zLzLxVeqdQg', 63],
-	[ "3blue1brown channel trailer", 'R7p-nPg8t_g', 93],
-	['Fractal charm: Space filling curves', 'RU0wScIj36o', 155],
+	["A Curious Pattern Indeed", '84hEmGHw3J8', 108],
+	["Euler's Formula Poem", "zLzLxVeqdQg", 63],
+	//[ "3blue1brown channel trailer", 'R7p-nPg8t_g', 93],
+	//['Fractal charm: Space filling curves', 'RU0wScIj36o', 155],
 	[ "Higher order derivatives | Essence of calculus, chapter 10", 'BLkz5LGWihw', 338],
 	[ "Pure Fourier series animation montage", '-qgreAUpPwM', 749],
 	[ "Differential equations, studying the unsolvable | DE1", 'p_di4Zn4wz4', 1637],
 	["Why do prime numbers make these spirals?", 'EK32jo7i5LQ', 1351],
-	["Some light quantum mechanics (with minutephysics)", "MzRCDLre1b4"],
+	//["Some light quantum mechanics (with minutephysics)", "MzRCDLre1b4"],
 ]
 
 function randomImage() {
 	let rand_video = Math.floor(Math.random() * video_info.length)
-	let rand_time = Math.round(Math.random() * video_info[2])
+	console.log(rand_video)
+	let rand_time = Math.round(Math.random() * video_info[rand_video][2])
 	let video_id = video_info[rand_video][1]
 	let video_title = video_info[rand_video][0]
-	const path = `./screencaps/${video_id}/${rand_time}.png`
+	const path = `../screencaps/${video_id}/${rand_time}.png`
 	return [path, video_title, video_id, rand_time]
 }
 
@@ -48,5 +49,5 @@ function tweetScreencap() {
 }
 
 tweetScreencap()
-setInterval(tweetScreencap, 1000 * 60)
+setInterval(tweetScreencap, 1000 * 60 * 60)
 
