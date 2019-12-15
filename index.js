@@ -23,7 +23,7 @@ const video_info = [
 	[ "Pure Fourier series animation montage", '-qgreAUpPwM', 749],
 	[ "Differential equations, studying the unsolvable | DE1", 'p_di4Zn4wz4', 1637],
 	["Why do prime numbers make these spirals?", 'EK32jo7i5LQ', 1351],
-	//["Some light quantum mechanics (with minutephysics)", "MzRCDLre1b4"],
+	["Some light quantum mechanics (with minutephysics)", "MzRCDLre1b4", 1341],
 ]
 
 function randomImage() {
