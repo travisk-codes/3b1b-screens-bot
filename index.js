@@ -24,6 +24,7 @@ const video_info = [
 	[ "Differential equations, studying the unsolvable | DE1", 'p_di4Zn4wz4', 1637],
 	["Why do prime numbers make these spirals?", 'EK32jo7i5LQ', 1351],
 	["Some light quantum mechanics (with minutephysics)", "MzRCDLre1b4", 1341],
+	['But what is a Fourier series From heat flow to circle drawings', 'r6sGWTCMz2k', 1484],
 ]
 
 function randomImage() {
