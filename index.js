@@ -25,6 +25,10 @@ const video_info = [
 	["Why do prime numbers make these spirals?", 'EK32jo7i5LQ', 1351],
 	["Some light quantum mechanics (with minutephysics)", "MzRCDLre1b4", 1341],
 	['But what is a Fourier series From heat flow to circle drawings', 'r6sGWTCMz2k', 1484],
+	['But why is a sphere\'s surface area four times its shadow', 'GNcFjFmqEc8', 1021]
+	['But what is a partial differential equation', 'ly4S0oi3Yz8', 1060],
+	['The more general uncertainty principle, beyond quantum', 'MBnnXbOM5S4', 1088], 
+	['How colliding blocks act like a beam of light...to compute pi.','brU5yLm9DZM'882],
 ]
 
 function randomImage() {
@@ -50,5 +54,5 @@ function tweetScreencap() {
 }
 
 tweetScreencap()
-setInterval(tweetScreencap, 1000 * 60 * 60)
+setInterval(tweetScreencap, 1000 * 60)
 
